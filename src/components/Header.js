@@ -26,6 +26,10 @@ class Header extends React.Component {
                         </h1>
                     </div>
                 </div>
+                <svg preserveAspectRatio="none" viewBox="0 0 100 100" height="75" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 0 0 L 50 100 L 0 100 Z" fill="#3399FF" stroke="#3399FF"></path>
+                        <path d="M 50 100 L 100 100 L 100 0 Z" fill="#3399FF" stroke="#3399FF"></path>
+                </svg>
             </div>
         )
     }

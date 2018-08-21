@@ -29,7 +29,7 @@ class About extends React.Component {
                 },
                 {
                     name: 'Node.js',
-                    progress: '70'
+                    progress: '75'
                 },
             ]
         };
@@ -43,7 +43,7 @@ class About extends React.Component {
     render() {    
 
         return(
-            <div className="section about">
+            <div className={ this.props.active ? 'section about active' : 'section about' } id="about">
                 <div className="about-text">
                     <h1 className="section-title">Who am I?</h1>
                     <p>I am a beginner Front-End Developer from Moscow  but living in Kiev. <br/>

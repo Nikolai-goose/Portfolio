@@ -78,8 +78,15 @@ a {
       position: absolute;
       height: 3px;
       width: 70%;
+      transform: scale(0);
       background-color: #000;
       left: 15%;
       bottom: -2px;
+      transition: all 0.4s;
+
   }
+}
+
+.active .section-title::after {
+      transform: scaleX(1);
 }

@@ -1,15 +1,16 @@
+@import 'variables';
+
 .contact {
     background: url(../images/contact.jpg) no-repeat;
     background-size: cover;
     align-items: center;
-    color: white;  
-    padding-top: 36px;
+    color: $white;  
 
     & .section-title{
-        margin-bottom: 50px;
+        margin: 50px 0;
 
         &::after{
-            background-color: white;
+            background-color: $white;
         }
     }
 }
@@ -46,21 +47,21 @@
     transition: all 0.4s;
 
     &:focus {
-        border: 2px solid #3399FF;
-        color: white;   
+        border: 2px solid $main;
+        color: $white;   
     
 
         &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-            color: white;
+            color: $white;
             opacity: 1; 
         }
         
         &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-            color: white;
+            color: $white;
         }
         
         &::-ms-input-placeholder { /* Microsoft Edge */
-            color: white;
+            color: $white;
         }
     }
 }
@@ -85,9 +86,9 @@
     transition: all 0.5s;
 
     &:hover {
-        border: 2px solid #3399FF;
-        background-color: #3399FF;
-        color: white;
+        border: 2px solid $main;
+        background-color: $main;
+        color: $white;
     }
 }
 

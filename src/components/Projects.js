@@ -34,7 +34,7 @@ class Projects extends React.Component {
 
     render() {
         return(
-            <div className="section projects">
+            <div className={ this.props.active ? 'section projects active' : 'section projects' }>
                 <svg preserveAspectRatio="none" viewBox="0 0 100 100" height="75" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
                     <path d="M 0 0 L 50 100 L 100 0 Z" fill="white" stroke="white"></path>
                 </svg>

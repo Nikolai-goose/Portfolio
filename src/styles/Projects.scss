@@ -1,6 +1,9 @@
+@import 'variables';
+
 .projects {
-    background-color: #F5F5F5;
+    background-color: $light-grey;
     align-items: center;
+    height: 200vh;
 }
 
 .projects-list {
@@ -10,5 +13,5 @@
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: flex-start;
+    align-content: flex-start;
 }

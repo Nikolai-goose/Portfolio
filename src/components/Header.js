@@ -1,18 +1,61 @@
 import React from 'react';
 import '../styles/Header.scss';
+import * as Scroll from 'react-scroll';
+import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 
 class Header extends React.Component {
+    constructor(props) {
+        super(props);
+        this.scrollToBottom = this.scrollToBottom.bind(this)
+    }
+    
+    scrollToBottom(e){
+        e.preventDefault();
+        scroll.scrollToBottom()
+    }
+
     render() {
         return(
-            <div className="section header">
+            <div className="section header" id='header'>
                 {/* Header-menu */}
                 <div className="header__menu">
                     <h2 className="menu__title">Nikolai Guschin</h2>
                     <div className="menu__nav">
                         <ul className="nav__list">
-                            <li className="nav__item"><a href="" className="nav__link" data-scroll-to="1">Home</a></li>
-                            <li className="nav__item"><a href="" className="nav__link" data-scroll-to="2">About me</a></li>
-                            <li className="nav__item"><a href="" className="nav__link" data-scroll-to="3">Contact me</a></li>
+                            <li className="nav__item">
+                                <Link 
+                                    to="header" 
+                                    spy={true} 
+                                    smooth={true} 
+                                    duration={500} 
+                                    className="nav__link" 
+                                >
+                                    Home
+                                </Link>
+                            </li>
+                            <li className="nav__item">
+                                <Link 
+                                    to="about" 
+                                    spy={true} 
+                                    smooth={true} 
+                                    duration={500} 
+                                    className="nav__link" 
+                                >
+                                    About me
+                                </Link>
+                            </li>
+                            <li className="nav__item">
+                                <Link 
+                                    to="contact" 
+                                    spy={true} 
+                                    smooth={true} 
+                                    duration={500} 
+                                    className="nav__link" 
+                                >
+                                    Contact me
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -26,6 +69,15 @@ class Header extends React.Component {
                         </h1>
                     </div>
                 </div>
+                <Link 
+                    to="about" 
+                    spy={true} 
+                    smooth={true} 
+                    duration={500} 
+                    className="down-arrow" 
+                >
+                    <i className="fas fa-sort-down"></i>
+                </Link>
                 <svg preserveAspectRatio="none" viewBox="0 0 100 100" height="75" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <path d="M 0 0 L 50 100 L 0 100 Z" fill="#3399FF" stroke="#3399FF"></path>
                         <path d="M 50 100 L 100 100 L 100 0 Z" fill="#3399FF" stroke="#3399FF"></path>

@@ -1,5 +1,7 @@
+@import 'variables';
+
 .projects-list-item {
-    height: 50%;
+    height: 33%;
     width: 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -15,12 +17,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // color: white;
+    color: $grey;
     transition: all 0.3s;
 
     &:hover {
         opacity: 1;
-        background-color: rgba(0,0,0,0.8);
+        background-color: $transparent;
     }
 }
 
@@ -28,8 +30,8 @@
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    background-color: #1E1E1E;
-    color: #7B7B7B;
+    background-color: $dark-grey;
+    color: $white;
     position: relative;
     font-size: 14px;
     transition: all 0.4s;
@@ -42,7 +44,7 @@
     }
 
     &:hover {
-        background-color: #7B7B7B; 
-        color: white;
+        background-color: $grey; 
+        color: $white;
     }
 }

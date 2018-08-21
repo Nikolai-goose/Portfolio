@@ -31,7 +31,7 @@ class Contact extends React.Component {
 
     render() {
         return(
-            <div className="section contact">
+            <div className={ this.props.active ? 'section contact active' : 'section contact' } id='contact'>
                 <div className="contact-main">
                 <h1 className="section-title">Contact Me</h1>
                     <form action="#" className="contact-form">

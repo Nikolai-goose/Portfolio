@@ -1,9 +1,11 @@
+@import 'variables';
+
 .footer {
     width: 100%;
     display: flex;
-    background-color: #1E1E1E;
-    height: 240px;
-    padding-top: 80px;
+    background-color: $dark-grey;
+    height: 200px;
+    padding-top: 40px;
 }
 
 .footer-text {
@@ -14,13 +16,13 @@
 .footer-text-title {
     margin: 0;
     font-size: 24px;
-    color: #7B7B7B;
+    color: $grey;
     
 }
 
 .footer-text-email {
     font-size: 24px;
-    color: #7B7B7B;
+    color: $grey;
     font-weight: 700;
     position: relative;
     transition: all 0.4s;
@@ -29,7 +31,7 @@
     &::after {
         content: '';
         position: absolute;
-        background-color: #3399FF;
+        background-color: $main;
         left: 5%;
         right: 5%;
         bottom: -4px;
@@ -39,7 +41,7 @@
     }
 
     &:hover {
-        color: #3399FF;
+        color: $main;
     
         &::after {
             transform: scale(1);
@@ -72,12 +74,12 @@
 
     & .links-list-item-link {
         font-size: 30px;
-        color: #2E343B;
+        color: $dark-grey;
         height: 100%;
         width: 100%;
         display: block;
         position: relative;
-        background-color: #7B7B7B;
+        background-color: $grey;
         border-radius: 50%;     
         transition: all 0.4s;   
 
@@ -89,8 +91,8 @@
         }
 
         &:hover {
-            background-color: #3399FF;
-            color: white;
+            background-color: $main;
+            color: $white;
         }
     }
 }

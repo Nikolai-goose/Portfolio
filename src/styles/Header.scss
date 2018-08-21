@@ -1,3 +1,5 @@
+@import 'variables';
+
 .header {
     width: 100%;
     display: flex;
@@ -15,8 +17,8 @@
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    background-color: #1E1E1E;
-    color: #3399FF;
+    background-color: $dark-grey;
+    color: $main;
 }
 
 .header__menu::after {
@@ -26,7 +28,7 @@
     bottom: -4px;
     left: 0;
     right: 0;
-    background-color: #3399FF;
+    background-color: $main;
 }
 
 .nav__list {
@@ -43,7 +45,8 @@
 
 .nav__link {
     font-size: 20px;
-    color: #3399FF;
+    color: $main;
+    cursor: pointer;
 }
 
 .header__title {
@@ -59,18 +62,26 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: $transparent;
 }
 
 .header__title-text {
-    color: white;
+    color: $white;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .down-arrow {
     position: absolute;
     bottom: 3%;
     font-size: 70px;
-    color: rgba(0, 0, 0, 0.5);
+    color: $transparent;
+    transition: all 0.4s;
+
+    &:hover{
+        bottom: 4%;
+        font-size: 80px;
+        color: $dark-grey;
+    }
 }
 

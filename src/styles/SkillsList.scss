@@ -1,3 +1,5 @@
+@import 'variables';
+
 .list-item {
     width: 90%;
 }
@@ -6,24 +8,24 @@
     top: -30px;
     left: 2%;
     position: relative;
-    color: white;
+    color: $white;
 }
 
 .progress {
-    background-color: #e0eaf0;
+    background-color: $light-grey;
     border: none;
     height: 36px;
     width: 100%;
 }
 
 progress::-webkit-progress-bar {
-    background-color: #e0eaf0;
+    background-color: $light-grey;
 }
 
 progress::-webkit-progress-value {
-    background-color: #3399FF;
+    background-color: $main;
 }
 
 progress::-moz-progress-value {
-    background-color: #3399FF;
+    background-color: $main;
 }

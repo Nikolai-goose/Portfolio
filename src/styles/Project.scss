@@ -1,7 +1,7 @@
 @import 'variables';
 
 .projects-list-item {
-    height: 33%;
+    height: 50%;
     width: 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -20,9 +20,40 @@
     color: $grey;
     transition: all 0.3s;
 
+    
+
+    & .project-text {
+        opacity: 0;
+        transform: translateY(-100px);
+        transition-delay: 0.3s;
+        transition: all 0.4s;
+    }
+
+    & .project-link {
+        opacity: 0;
+    }
+
     &:hover {
         opacity: 1;
         background-color: $transparent;
+
+        & .project-text{
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        & .project-link {
+            opacity: 1;
+        }
+    }
+}
+
+.project-text {
+    width: 60%;
+    text-align: center;
+
+    &:hover {
+        color: $white;
     }
 }
 
@@ -31,10 +62,11 @@
     width: 60px;
     border-radius: 50%;
     background-color: $dark-grey;
-    color: $white;
+    color: $grey;
     position: relative;
     font-size: 14px;
-    transition: all 0.4s;
+    transition-delay: 0.3s;
+    transition: all 0.6s;
 
     & span {
         position: absolute;

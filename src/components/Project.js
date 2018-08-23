@@ -11,8 +11,10 @@ class Project extends React.Component {
         return(
             <li className="projects-list-item" style={style} >
                 <div className="project-content">
-                    <h1 className="project-title"> {this.props.title} </h1>
-                    <p className="project-text"> {this.props.description} </p>
+                    <div className="project-text">
+                        <h1 className="project-title"> {this.props.title} </h1>
+                        <p className="project-desc"> {this.props.description} </p>
+                    </div>
                     <a className="project-link" href={this.props.link} ><span>See</span></a>
                 </div>
             </li>

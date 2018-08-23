@@ -6,7 +6,7 @@ const outputPath = path.resolve(__dirname, './dist')
 const webpackConfig = {
 	entry: {
 		app: [
-			path.resolve(__dirname, './src/main.js')
+			path.resolve(__dirname, './src/app.js')
 		]
 	},
 	output: {

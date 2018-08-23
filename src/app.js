@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom'
 import * as Scroll from 'react-scroll';
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
-import './styles/main.scss';
+import './styles/App.scss';
 import Header from './components/Header';
+import Main from './components/Main'
 import About from './components/About';
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 
-class Main  extends React.Component {
+class App  extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -30,8 +31,8 @@ class Main  extends React.Component {
     handleScroll() {
         let pos = window.scrollY/window.innerHeight;
 
-        if (pos < 0.5 && this.state.section != 'header') {
-            this.setState({section: 'header'})   
+        if (pos < 0.5 && this.state.section != 'main') {
+            this.setState({section: 'main'})   
         } else {
             if (pos >= 0.5 && pos < 1.5 && this.state != 'about') {
                 this.setState({section: 'about'})                
@@ -58,7 +59,8 @@ class Main  extends React.Component {
         return (
             <div className="wrapper">
                 <div className="mainContent">
-                    <Header active={ this.state.section == 'header' ? true : false }/>
+                    <Header />
+                    <Main active={ this.state.section == 'main' ? true : false }/>
                     <About active={ this.state.section == 'about' ? true : false }/>
                     <Projects active={ this.state.section == 'projects' ? true : false }/>
                     <Contact active={ this.state.section == 'contact' ? true : false }/>
@@ -69,7 +71,7 @@ class Main  extends React.Component {
 }
 
 ReactDOM.render(
-    <Main />,
+    <App />,
     document.getElementById('root')
 );
 

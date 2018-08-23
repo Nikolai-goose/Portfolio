@@ -62,12 +62,16 @@
     display: flex;
     align-items: flex-start;
     padding-top: 20px;
-    justify-content: center;
+    justify-content: flex-end;
     height: 100%;
+
+    &:last-child {
+        margin-right: 10%;
+    }
 }
 
 .links-list-item {
-    margin-left: 20px;
+    margin-right: 20px;
     height: 50px;
     width: 50px;
     

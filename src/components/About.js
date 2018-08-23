@@ -46,8 +46,8 @@ class About extends React.Component {
             <div className={ this.props.active ? 'section about active' : 'section about' } id="about">
                 <div className="about-text">
                     <h1 className="section-title">Who am I?</h1>
-                    <p>I am a beginner Front-End Developer from Moscow  but living in Kiev. <br/>
-                    I like to create something new and impressive<br/>
+                    <p>I am a Front-End Developer from Moscow and<br/>
+                    I like to create impressive and exciting things<br/>
                     </p>
                 </div>
                 <div className="about-skills">

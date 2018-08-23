@@ -22,11 +22,17 @@ class Contact extends React.Component {
                 }
             ]
         }
+        this.HandleFormSubmit = this.HandleFormSubmit.bind(this);
     }
 
     componentDidMount() {
         console.log(this.state.soci);
         
+    }
+
+    HandleFormSubmit(e) {
+       e.preventDefault();
+       alert('Message send')
     }
 
     render() {
@@ -38,13 +44,13 @@ class Contact extends React.Component {
                         <input type="text" name="name" className="contact-input" placeholder="Name"/>
                         <input type="text" name="e-mail" className="contact-input" placeholder="Email"/>                        
                         <textarea  name="text" className="contact-input textarea" rows="4" placeholder="Your great idea..."/>
-                        <input type="submit" value="Send" className="contact-submit"/> 
+                        <input type="submit" value="Send" className="contact-submit"  onClick={this.HandleFormSubmit}/> 
                     </form>
                 </div>
                 <footer className="footer">
                     <div className="footer-text">
                         <h1 className="footer-text-title">Or just mail me</h1>
-                        <a href="#" className="footer-text-email">akors99@gmail.com</a>
+                        <a href="mailto:akors99@gmail.com" className="footer-text-email">akors99@gmail.com</a>
                         <div className="footer-text-copyright">Nikolai Guschin ©2018 </div>
                     </div>
                     <div className="footer-links">

@@ -3,6 +3,7 @@ import Project from './Project'
 import '../styles/Projects.scss'
 
 import mrBurger from '../images/MrBurger.jpg'
+import roteBirne from '../images/RoteBirne.png'
 import noteApp from '../images/noteApp.png'
 
 class Projects extends React.Component {
@@ -15,6 +16,12 @@ class Projects extends React.Component {
                     img: mrBurger,
                     description: 'A website for "Mr.Burger" fictional company done for Web-Dev course at LoftSchool',
                     link: 'https://github.com/Nikolai-goose/Burgers'
+                },
+                {
+                    title: 'Rote birne',
+                    img: roteBirne,
+                    description: 'A front-end part for deutsch designer "Rote birne"',
+                    link: 'https://rotebirne-design.de/'
                 },
                 {
                     title: 'Task app',

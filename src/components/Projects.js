@@ -5,6 +5,7 @@ import Project from './Project'
 import mrBurger from '../images/MrBurger.jpg'
 import roteBirne from '../images/RoteBirne.png'
 import noteApp from '../images/noteApp.png'
+import parfum from '../images/parfum.png'
 
 class Projects extends React.Component {
     constructor(props) {
@@ -30,10 +31,10 @@ class Projects extends React.Component {
                     link: 'https://github.com/Nikolai-goose/Simple-task-app'
                 },
                 {
-                    title: 'Unsplash based gallery',
-                    img: '',
-                    description: 'A gallerylike app based on Unsplash API',
-                    link: 'https://github.com/Nikolai-goose/Gallery-with-the-unsplash'
+                    title: 'Parfuemfuerdich',
+                    img: parfum,
+                    description: 'A HTML layout for e-mail message',
+                    link: false
                 },
             ]
         }

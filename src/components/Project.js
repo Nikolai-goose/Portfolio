@@ -12,7 +12,7 @@ class Project extends React.Component {
                         <h1 className="project-title"> {this.props.title} </h1>
                         <p className="project-desc"> {this.props.description} </p>
                     </div>
-                    <a className="project-link" href={this.props.link} ><span>See</span></a>
+                    {this.props.link ?  <a className="project-link" href={this.props.link} ><span>See</span></a> : ''}
                 </div>
             </li>
         )

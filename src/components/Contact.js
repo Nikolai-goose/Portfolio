@@ -1,7 +1,5 @@
 import React from 'react';
 import SocialLink from './SocialLink'
-import '../styles/Contact.scss';
-import '../styles/Footer.scss'
 
 class Contact extends React.Component {
     constructor(props) {
@@ -25,10 +23,6 @@ class Contact extends React.Component {
         this.HandleFormSubmit = this.HandleFormSubmit.bind(this);
     }
 
-    componentDidMount() {
-        console.log(this.state.soci);
-        
-    }
 
     HandleFormSubmit(e) {
        e.preventDefault();

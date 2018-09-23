@@ -1,7 +1,6 @@
 import React from 'react';
 import SkillsList from './SkillsList'
 import '../styles/About.scss';
-
 class About extends React.Component {
     constructor(props) {
         super(props);

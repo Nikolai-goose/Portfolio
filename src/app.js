@@ -45,10 +45,7 @@ class App  extends React.Component {
                     }
                 }    
             }
-        }
-        
-        console.log(pos);
-        console.log(this.state.section);  
+        } 
     }
 
     scrollToBottom() {

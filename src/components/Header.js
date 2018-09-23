@@ -1,14 +1,23 @@
 import React from 'react'
-import '../styles/Header.scss'
 import * as Scroll from 'react-scroll';
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 class Header extends React.Component {
     constructor(props) {
         super(props);
-        this.scrollToBottom = this.scrollToBottom.bind(this)
+        this.state = {
+            navActive: false
+        }
+        this.scrollToBottom = this.scrollToBottom.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
-    
+
+    handleClick() {
+        this.setState({
+            navActive: !this.state.navActive
+        })  
+    }
+
     scrollToBottom(e){
         e.preventDefault();
         scroll.scrollToBottom()

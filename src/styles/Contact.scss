@@ -85,6 +85,10 @@
     margin-right: calc(10% - 10px);
     transition: all 0.5s;
 
+    @include tablets {
+        margin: 0 auto;
+    }
+
     &:hover {
         border: 2px solid $main;
         background-color: $main;

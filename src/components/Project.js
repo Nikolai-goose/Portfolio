@@ -1,11 +1,8 @@
 import React from 'react';
-import '../styles/Project.scss'
 
 class Project extends React.Component {
     render() {
-        console.log(this.props.img);
-        
-        var style = { backgroundImage: 'url(' + this.props.img + ')',
+    var style = { backgroundImage: 'url(' + this.props.img + ')',
     };
 
         return(

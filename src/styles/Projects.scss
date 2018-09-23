@@ -4,6 +4,10 @@
     background-color: $light-grey;
     align-items: center;
     height: 150vh;
+
+    @include tablets {
+        height: 100vh;
+    }
 }
 
 .projects-list {
@@ -14,4 +18,5 @@
     flex-direction: row;
     align-items: flex-start;
     align-content: flex-start;
+
 }

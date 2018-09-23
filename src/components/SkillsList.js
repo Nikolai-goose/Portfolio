@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/SkillsList.scss'
+
 
 class  SkillsList extends React.Component {
     render() {

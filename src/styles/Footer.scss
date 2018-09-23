@@ -6,11 +6,23 @@
     background-color: $dark-grey;
     height: 200px;
     padding-top: 40px;
+
+    @include tablets {
+        flex-direction: column;
+        padding-top: 40px;
+        height: 360px;
+        text-align: center;
+        align-items: center;
+    }
 }
 
 .footer-text {
     flex: 1;
     padding-left: 40px;
+
+    @include tablets {
+        padding: 0;
+    }
 }
 
 .footer-text-title {
@@ -65,8 +77,16 @@
     justify-content: flex-end;
     height: 100%;
 
+    @include tablets {
+        
+    }
+
     &:last-child {
         margin-right: 10%;
+
+        @include tablets{
+            margin: 0;
+        }
     }
 }
 

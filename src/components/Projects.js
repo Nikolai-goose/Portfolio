@@ -1,6 +1,6 @@
 import React from 'react'
 import Project from './Project'
-import '../styles/Projects.scss'
+
 
 import mrBurger from '../images/MrBurger.jpg'
 import roteBirne from '../images/RoteBirne.png'

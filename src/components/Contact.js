@@ -1,32 +1,86 @@
 import React from 'react';
-import SocialLink from './SocialLink'
 
 class Contact extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            socials: [
-                {
-                    url: 'https://www.linkedin.com/in/nikolai-guschin-2aaab1166/',
-                    icon: 'fab fa-linkedin-in'
-                },
-                {
-                    url: 'https://github.com/Nikolai-goose',
-                    icon: 'fab fa-github'
-                },
-                {
-                    url: 'https://www.facebook.com/nikolai.guschin.75',
-                    icon: 'fab fa-facebook-f'
-                }
-            ]
+            email: '',
+            name: '',
+            text: '',
+            formErrors: {
+                email: '',
+                name: ''
+            },
+            emailvalid: false,
+            nameValid: false,
+            formValid: false
         }
-        this.HandleFormSubmit = this.HandleFormSubmit.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
+    handleInputChange(e) {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({[name]: value}, 
+                      () => { this.validateField(name, value) });
+    }
 
-    HandleFormSubmit(e) {
-       e.preventDefault();
-       alert('Message send')
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let emailValid = this.state.emailValid;
+        let nameValid = this.state.nameValid;
+      switch(fieldName) {
+            case 'email':
+                emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+                fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+                break;
+            case 'name':
+                nameValid = value.length > 0;
+                fieldValidationErrors.name = nameValid ? '': ' write your name';
+                break;
+            default:
+                break;
+        }
+        this.setState({
+            formErrors: fieldValidationErrors,
+            emailValid: emailValid,
+            nameValid: nameValid
+        }, this.validateForm);
+      }
+
+      validateForm() {
+        this.setState({
+            formValid: this.state.emailValid &&
+            this.state.nameValid});
+      }
+
+
+    handleFormSubmit(e) {
+        e.preventDefault();
+        $.ajax({
+
+            url: '../mailer.php',
+            type: 'POST',
+            data: {
+            
+            form_name: this.state.name,
+            form_email: this.state.email,
+            form_msg: this.state.text
+            
+            },
+            cache: false,
+            success: function(data) {
+                alert('message sent')
+            },
+            error: function(xhr, status, err) {
+                alert('error')
+            }          
+        });
+    }
+
+    errorClass(error) {
+        return(error.length === 0 ? '' : 'has-error');
     }
 
     render() {
@@ -35,34 +89,33 @@ class Contact extends React.Component {
                 <div className="contact-main">
                 <h1 className="section-title">Contact Me</h1>
                     <form action="#" className="contact-form">
-                        <input type="text" name="name" className="contact-input" placeholder="Name"/>
-                        <input type="text" name="e-mail" className="contact-input" placeholder="Email"/>                        
-                        <textarea  name="text" className="contact-input textarea" rows="4" placeholder="Your great idea..."/>
-                        <input type="submit" value="Send" className="contact-submit"  onClick={this.HandleFormSubmit}/> 
+                        <input 
+                            onChange={this.handleInputChange} 
+                            type="text" name="name" 
+                            className={`contact-input ${this.errorClass(this.state.formErrors.name)}`} 
+                            placeholder="Name" 
+                            value={this.state.name}/>
+                        <input 
+                            onChange={this.handleInputChange} 
+                            type="email" 
+                            name="email" 
+                            className={`contact-input ${this.errorClass(this.state.formErrors.email)}`}
+                            placeholder="Email" 
+                            value={this.state.email}/>                        
+                        <textarea 
+                            onChange={this.handleInputChange}  
+                            name="text" className="contact-input textarea" 
+                            rows="4" 
+                            placeholder="Your great idea..." 
+                            value={this.state.text}/>
+                        <button
+                            type="submit" 
+                            className="contact-submit"  
+                            onClick={this.handleFormSubmit}
+                            disabled={!this.state.formValid}
+                        >Send</button>
                     </form>
                 </div>
-                <footer className="footer">
-                    <div className="footer-text">
-                        <h1 className="footer-text-title">Or just mail me</h1>
-                        <a href="mailto:akors99@gmail.com" className="footer-text-email">akors99@gmail.com</a>
-                        <div className="footer-text-copyright">Nikolai Guschin ©2018 </div>
-                    </div>
-                    <div className="footer-links">
-                        <ul className="links-list">
-                            {   
-                                this.state.socials.map(function(link){
-                                    return(
-                                        <SocialLink 
-                                            key={link.url}
-                                            url={link.url}
-                                            icon={link.icon}
-                                        />
-                                    )
-                                })
-                            }
-                        </ul>
-                    </div>
-                </footer>
             </div>
         )
     }

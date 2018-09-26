@@ -66,6 +66,11 @@
     }
 }
 
+.has-error {
+    border: 2px solid rgba($color: rgb(199, 27, 27), $alpha: 0.8);
+
+}
+
 .textarea {
     font-size: 14px;
     font-family: 'Raleway', sans-serif;
@@ -87,6 +92,17 @@
 
     @include tablets {
         margin: 0 auto;
+    }
+
+    &:disabled {
+        color: #444;
+        border: 2px solid rgba($color: #444, $alpha: 0.8);
+
+        &:hover {
+            color: #444;
+            border: 2px solid rgba($color: #444, $alpha: 0.8); 
+            background: transparent;
+        }
     }
 
     &:hover {

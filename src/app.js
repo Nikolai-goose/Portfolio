@@ -8,7 +8,8 @@ import Header from './components/Header';
 import Main from './components/Main'
 import About from './components/About';
 import Projects from './components/Projects'
-import Contact from './components/Contact'
+import Contact from './components/Contact';
+import Footer from './components/Footer'
 
 class App  extends React.Component {
     constructor(props) {
@@ -37,10 +38,10 @@ class App  extends React.Component {
             if (pos >= 0.5 && pos < 1.5 && this.state != 'about') {
                 this.setState({section: 'about'})                
             } else {
-                if (pos >= 1.5 && pos < 3.5 && this.state != 'projects') {
+                if (pos >= 1.5 && pos < 3 && this.state != 'projects') {
                     this.setState({section: 'projects'})                
                 } else {
-                    if (pos >= 3.5 &&  this.state != 'contact') {
+                    if (pos >= 3 &&  this.state != 'contact') {
                         this.setState({section: 'contact'})                
                     }
                 }    
@@ -61,6 +62,7 @@ class App  extends React.Component {
                     <About active={ this.state.section == 'about' ? true : false }/>
                     <Projects active={ this.state.section == 'projects' ? true : false }/>
                     <Contact active={ this.state.section == 'contact' ? true : false }/>
+                    <Footer />
                 </div>
             </div>  
         )
